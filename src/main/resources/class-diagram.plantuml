@@ -1,0 +1,41 @@
+@startuml
+
+class Geschaeftspartner {
+    -name: String
+}
+
+class Mitarbeiter {
+    -vorname: String
+    -nachname: String
+    -telefonnummer: String
+    -email: String
+    -geburtsdatum: LocalDate
+}
+
+class GeschaeftspartnerMitarbeiter {
+    -name: String
+}
+
+class Standort {
+    -name: String
+}
+
+class Anschrift {
+    -strasse: String
+    -hausnummer: String
+    -plz: String
+    -ort: String
+    -land: String
+    -zusatz: String
+}
+
+Geschaeftspartner "1" *-- "0..n" GeschaeftspartnerMitarbeiter
+Mitarbeiter "1" *-- "0..n" GeschaeftspartnerMitarbeiter
+
+Mitarbeiter "1" *-- "1" Anschrift
+Standort "1" *-- "1" Anschrift
+
+Mitarbeiter "1 ..n" -- "0..n" Standort : arbeitet in
+Geschaeftspartner "1" *-- "1..n" Standort
+
+@enduml

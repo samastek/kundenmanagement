@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: "Geschaeftspartner API"
+  description: Eine API für die Verwaltung von Geschaeftspartnern, zu diesen zugehörigen Mitarbeitern und Standorten
+  version: 1.0.0
+paths:
+  /geschaeftspartner:
+    post:
+      operationId: addGeschaeftspartner
+      summary: addGeschaeftspartner
+      description: fügt einen neuen Geschaeftspartner hinzu
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeschaeftspartnerModel'
+      responses:
+        '201':
+          description: Der erstellte Geschaeftspartner
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeschaeftspartnerModel'
+    get:
+      operationId: getAllGeschaeftspartner
+      summary: getAllGeschaeftspartner
+      description: Ausgabe aller Geschaeftspartner
+      responses:
+        '200':
+          description: Eine Liste aller Geschaeftspartner
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GeschaeftspartnerModel'
+
+  /geschaeftspartner/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: die ID des Geschaeftspartners
+        required: true
+        schema:
+          type: integer
+          format: int64
+    get:
+      operationId: getGeschaeftspartnerById
+      summary: getGeschaeftspartnerById
+      description: ermittelt einen Geschaeftspartner per dessen ID
+      responses:
+        '200':
+          description: der ermittelte Geschaeftspartner
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeschaeftspartnerModel'
+        '404':
+          description: Geschaeftspartner nicht gefunden
+    put:
+      operationId: updateGeschaeftspartner
+      summary: UpdateGeschaeftspartner
+      description: aktualisiert die Details eines Geschaeftspartners
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeschaeftspartnerModel'
+      responses:
+        '200':
+          description: die aktualisierten Details des Geschaeftspartners
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GeschaeftspartnerModel'
+        '404':
+          description: Geschaeftspartner nicht gefunden
+          content:
+            text/plain:
+              schema:
+                type: string
+    delete:
+      operationId: deleteGeschaeftspartner
+      description: löscht einen Geschaeftspartner
+      summary: deleteGeschaeftspartner
+      responses:
+        '204':
+          description: Geschaeftspartner erfolgreich gelöscht
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Geschaeftspartner nicht gefunden
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    GeschaeftspartnerModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: ID des Geschaeftspartners
+        name:
+          type: string
+          description: Name des Geschaeftspartners
+        Mitarbeiter:
+          type: array
+          items:
+            $ref: './mitarbeiter-api.yaml#/components/schemas/MitarbeiterModel'
+          description: Liste der Mitarbeiter des Geschaeftspartners
+        Standorte:
+          type: array
+          items:
+            $ref: './standort-api.yaml#/components/schemas/StandortModel'
+          description: Liste der Standort-IDs des Geschaeftspartners
+      required:
+        - name
