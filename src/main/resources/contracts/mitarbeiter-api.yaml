@@ -15,7 +15,7 @@ paths:
           required: false
           description: Geschaeftspartner ID, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die diesem Geschaeftspartner zugeordnet sind.
         - in: query
-          name: standortIds
+          name: standortId
           schema:
             type: array
             items:
@@ -192,7 +192,7 @@ components:
           type: boolean
           default: true
       required:
-        - standorteIds
+        - standorteId
     AnschriftModel:
       type: object
       properties:

@@ -8,7 +8,7 @@
         <version>2.7.10</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>de.datev</groupId>
+    <groupId>de.unternehmen</groupId>
     <artifactId>kundenmanagement-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kundenmanagement-service</name>
@@ -84,22 +84,6 @@
             <artifactId>swagger-annotations</artifactId>
             <version>${swagger-annotations.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-jdk8</artifactId>
-            <version>${mapstruct.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>${mapstruct.version}</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -113,7 +97,7 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
-                    <mainClass>de.datev.kundenmanagement.KundenmanagementApplication</mainClass>
+                    <mainClass>de.unternehmen.kundenmanagement.KundenmanagementApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -132,11 +116,11 @@
                             <generateModelDocumentation>false</generateModelDocumentation>
                             <generateApiDocumentation>false</generateApiDocumentation>
                             <skipOverwrite>true</skipOverwrite>
-                            <apiPackage>de.datev.api.geschaeftspartner</apiPackage>
+                            <apiPackage>de.unternehmen.api.geschaeftspartner</apiPackage>
                             <inputSpec>${project.basedir}/src/main/resources/contracts/geschaeftspartner-api.yaml</inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>de.datev.kundenmanagement.generated.api</apiPackage>
-                            <modelPackage>de.datev.kundenmanagement.generated.model</modelPackage>
+                            <apiPackage>de.unternehmen.kundenmanagement.generated.api</apiPackage>
+                            <modelPackage>de.unternehmen.kundenmanagement.generated.model</modelPackage>
                             <configOptions>
                                 <additionalModelTypeAnnotations>@lombok.Builder @lombok.AllArgsConstructor</additionalModelTypeAnnotations>
                                 <useBeanValidation>true</useBeanValidation>
@@ -159,8 +143,8 @@
                             <inputSpec>${project.basedir}/src/main/resources/contracts/mitarbeiter-api.yaml</inputSpec>
                             <generatorName>spring</generatorName>
                             <ignoreFileOverride>true</ignoreFileOverride>
-                            <apiPackage>de.datev.kundenmanagement.generated.api</apiPackage>
-                            <modelPackage>de.datev.kundenmanagement.generated.model</modelPackage>
+                            <apiPackage>de.unternehmen.kundenmanagement.generated.api</apiPackage>
+                            <modelPackage>de.unternehmen.kundenmanagement.generated.model</modelPackage>
                             <configOptions>
                                 <additionalModelTypeAnnotations>@lombok.Builder @lombok.AllArgsConstructor</additionalModelTypeAnnotations>
                                 <useBeanValidation>true</useBeanValidation>
@@ -183,8 +167,8 @@
                             <inputSpec>${project.basedir}/src/main/resources/contracts/standort-api.yaml</inputSpec>
                             <generatorName>spring</generatorName>
                             <ignoreFileOverride>true</ignoreFileOverride>
-                            <apiPackage>de.datev.kundenmanagement.generated.api</apiPackage>
-                            <modelPackage>de.datev.kundenmanagement.generated.model</modelPackage>
+                            <apiPackage>de.unternehmen.kundenmanagement.generated.api</apiPackage>
+                            <modelPackage>de.unternehmen.kundenmanagement.generated.model</modelPackage>
                             <configOptions>
                                 <additionalModelTypeAnnotations>@lombok.Builder @lombok.AllArgsConstructor</additionalModelTypeAnnotations>
                                 <useBeanValidation>true</useBeanValidation>

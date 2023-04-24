@@ -1,0 +1,784 @@
+{
+	"info": {
+		"_postman_id": "c1e21ca0-5f16-4861-865a-c3fdf2258b55",
+		"name": "Mitarbeiter API",
+		"description": "Eine API für die Verwaltung von Mitarbeitern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17471919",
+		"_collection_link": "https://www.postman.com/blue-zodiac-63999/workspace/unternehmen/collection/17471919-c1e21ca0-5f16-4861-865a-c3fdf2258b55?action=share&creator=17471919&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "mitarbeiter",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "wechsel-standort",
+							"item": [
+								{
+									"name": "UpdateMitarbeiterStandorte",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"standorteIds\": [51],\n  \"removeOld\": true\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/101/wechsel-standort",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												"101",
+												"wechsel-standort"
+											]
+										},
+										"description": "wechselt den Standort der Mitarbeiter zu einem oder mehreren"
+									},
+									"response": [
+										{
+											"name": "Der Mitarbeiter wurde erfolgreich den neuen Standorten zugeordnet",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"standorteIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"removeOld\": true\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/mitarbeiter/:id/wechsel-standort",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"mitarbeiter",
+														":id",
+														"wechsel-standort"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}"
+										},
+										{
+											"name": "Der Mitarbeiter oder mindestens einer der neuen Standorte konnte nicht gefunden werden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"standorteIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"removeOld\": true\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/mitarbeiter/:id/wechsel-standort",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"mitarbeiter",
+														":id",
+														"wechsel-standort"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "wechsel-geschaeftspartner",
+							"item": [
+								{
+									"name": "{geschaeftspartnerId}",
+									"item": [
+										{
+											"name": "UpdateMitarbeiterGeschaeftspartner",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/mitarbeiter/:id/wechsel-geschaeftspartner/:geschaeftspartnerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"mitarbeiter",
+														":id",
+														"wechsel-geschaeftspartner",
+														":geschaeftspartnerId"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "101"
+														},
+														{
+															"key": "geschaeftspartnerId",
+															"value": "101"
+														}
+													]
+												},
+												"description": "wechselt den Standort des Mitarbeiters zu einem oder mehreren neuen Standorten (5)"
+											},
+											"response": [
+												{
+													"name": "Der Mitarbeiter wurde erfolgreich den neuen Standorten zugeordnet",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/mitarbeiter/:id/wechsel-geschaeftspartner/:geschaeftspartnerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"mitarbeiter",
+																":id",
+																"wechsel-geschaeftspartner",
+																":geschaeftspartnerId"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																},
+																{
+																	"key": "geschaeftspartnerId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}"
+												},
+												{
+													"name": "der Mitarbeiter oder die geschaeftspartner konnte nicht gefunden werden",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/mitarbeiter/:id/wechsel-geschaeftspartner/:geschaeftspartnerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"mitarbeiter",
+																":id",
+																"wechsel-geschaeftspartner",
+																":geschaeftspartnerId"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																},
+																{
+																	"key": "geschaeftspartnerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "getMitarbeiterById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/mitarbeiter/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mitarbeiter",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "101"
+										}
+									]
+								},
+								"description": "ermittelt einen Mitarbeiter anhand dessen ID"
+							},
+							"response": [
+								{
+									"name": "erfolgreich",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Mitarbeiter nicht gefunden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						},
+						{
+							"name": "UpdateMitarbeiter",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/mitarbeiter/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mitarbeiter",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "aktualisiert einen Mitarbeiter anhand dessen ID"
+							},
+							"response": [
+								{
+									"name": "Successfully updated",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Mitarbeiter nicht gefunden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						},
+						{
+							"name": "deleteMitarbeiter",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/mitarbeiter/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mitarbeiter",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "löscht einen Mitarbeiter anhand dessen ID"
+							},
+							"response": [
+								{
+									"name": "Successfully deleted",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Mitarbeiter nicht gefunden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/mitarbeiter/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"mitarbeiter",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "getMitarbeiterBy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/mitarbeiter?geschaeftspartnerId=<long>&standortIds=<long>&standortIds=<long>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mitarbeiter"
+							],
+							"query": [
+								{
+									"key": "geschaeftspartnerId",
+									"value": "<long>",
+									"description": "Geschaeftspartner ID, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die diesem Geschaeftspartner zugeordnet sind."
+								},
+								{
+									"key": "standortIds",
+									"value": "<long>",
+									"description": "Standort IDs, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die an einem der angegebenen Standorte arbeiten."
+								},
+								{
+									"key": "standortIds",
+									"value": "<long>",
+									"description": "Standort IDs, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die an einem der angegebenen Standorte arbeiten."
+								}
+							]
+						},
+						"description": "Ausgabe der Mitarbeiter, deren Eigenschaften mit den übergebenen Parametern übereinstimmt."
+					},
+					"response": [
+						{
+							"name": "ermittelt alle Mitarbeiter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/mitarbeiter?geschaeftspartnerId=<long>&standortIds=<long>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mitarbeiter"
+									],
+									"query": [
+										{
+											"key": "geschaeftspartnerId",
+											"value": "<long>",
+											"description": "Geschaeftspartner ID, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die diesem Geschaeftspartner zugeordnet sind."
+										},
+										{
+											"key": "standortIds",
+											"value": "<long>",
+											"description": "Standort IDs, wenn spezifiziert, werden nur Mitarbeiter zurückgegeben, die an einem der angegebenen Standorte arbeiten."
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"vorname\": \"<string>\",\n    \"nachname\": \"<string>\",\n    \"telefonnummer\": \"+49195\\r476144855387\",\n    \"email\": \"<email>\",\n    \"geburtsdatum\": \"<date>\",\n    \"geschaeftspartnerId\": \"<long>\",\n    \"standortIds\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"anschriftModel\": {\n      \"strasse\": \"<string>\",\n      \"hausnummer\": \"<string>\",\n      \"plz\": \"<string>\",\n      \"ort\": \"<string>\",\n      \"land\": \"<string>\",\n      \"id\": \"<long>\",\n      \"zusatz\": \"<string>\"\n    }\n  },\n  {\n    \"id\": \"<long>\",\n    \"vorname\": \"<string>\",\n    \"nachname\": \"<string>\",\n    \"telefonnummer\": \"03486\",\n    \"email\": \"<email>\",\n    \"geburtsdatum\": \"<date>\",\n    \"geschaeftspartnerId\": \"<long>\",\n    \"standortIds\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"anschriftModel\": {\n      \"strasse\": \"<string>\",\n      \"hausnummer\": \"<string>\",\n      \"plz\": \"<string>\",\n      \"ort\": \"<string>\",\n      \"land\": \"<string>\",\n      \"id\": \"<long>\",\n      \"zusatz\": \"<string>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "add Mitarbeiter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/mitarbeiter",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"mitarbeiter"
+							]
+						},
+						"description": "erstellt einen neuen Mitarbeiter hinzu"
+					},
+					"response": [
+						{
+							"name": "erfolgreich hinzugefügt",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/mitarbeiter",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"mitarbeiter"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"vorname\": \"<string>\",\n  \"nachname\": \"<string>\",\n  \"telefonnummer\": \"+4990299526\",\n  \"email\": \"<email>\",\n  \"geburtsdatum\": \"<date>\",\n  \"geschaeftspartnerId\": \"<long>\",\n  \"standortIds\": [\n    \"<long>\",\n    \"<long>\"\n  ],\n  \"anschriftModel\": {\n    \"strasse\": \"<string>\",\n    \"hausnummer\": \"<string>\",\n    \"plz\": \"<string>\",\n    \"ort\": \"<string>\",\n    \"land\": \"<string>\",\n    \"id\": \"<long>\",\n    \"zusatz\": \"<string>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

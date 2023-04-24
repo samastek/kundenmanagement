@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "3c36e2fc-9182-4aa4-b01c-37de215de0ac",
+		"name": "Geschaeftspartner API",
+		"description": "Eine API für die Verwaltung von Geschaeftspartnern, zu diesen zugehörigen Mitarbeitern und Standorten",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17471919",
+		"_collection_link": "https://www.postman.com/blue-zodiac-63999/workspace/unternehmen/collection/17471919-3c36e2fc-9182-4aa4-b01c-37de215de0ac?action=share&creator=17471919&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "geschaeftspartner",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "getGeschaeftspartnerById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/geschaeftspartner/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"geschaeftspartner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								},
+								"description": "ermittelt einen Geschaeftspartner per dessen ID"
+							},
+							"response": [
+								{
+									"name": "der ermittelte Geschaeftspartner",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Geschaeftspartner nicht gefunden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "UpdateGeschaeftspartner",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/geschaeftspartner/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"geschaeftspartner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "aktualisiert die Details eines Geschaeftspartners"
+							},
+							"response": [
+								{
+									"name": "die aktualisierten Details des Geschaeftspartners",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Geschaeftspartner nicht gefunden",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						},
+						{
+							"name": "deleteGeschaeftspartner",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/geschaeftspartner/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"geschaeftspartner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>"
+										}
+									]
+								},
+								"description": "löscht einen Geschaeftspartner"
+							},
+							"response": [
+								{
+									"name": "Geschaeftspartner erfolgreich gelöscht",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								},
+								{
+									"name": "Geschaeftspartner nicht gefunden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/geschaeftspartner/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"geschaeftspartner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "addGeschaeftspartner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/geschaeftspartner",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"geschaeftspartner"
+							]
+						},
+						"description": "fügt einen neuen Geschaeftspartner hinzu"
+					},
+					"response": [
+						{
+							"name": "Der erstellte Geschaeftspartner",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/geschaeftspartner",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"geschaeftspartner"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<long>\",\n  \"Mitarbeiter\": [\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n    }\n  ],\n  \"Standorte\": [\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    },\n    {\n      \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "getAllGeschaeftspartner",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/geschaeftspartner",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"geschaeftspartner"
+							]
+						},
+						"description": "Ausgabe aller Geschaeftspartner"
+					},
+					"response": [
+						{
+							"name": "Eine Liste aller Geschaeftspartner",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/geschaeftspartner",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"geschaeftspartner"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<long>\",\n    \"Mitarbeiter\": [\n      {\n        \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n      }\n    ],\n    \"Standorte\": [\n      {\n        \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n      }\n    ]\n  },\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<long>\",\n    \"Mitarbeiter\": [\n      {\n        \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference #/components/schemas/MitarbeiterModel not found in the OpenAPI spec\"\n      }\n    ],\n    \"Standorte\": [\n      {\n        \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n      },\n      {\n        \"value\": \"reference #/components/schemas/StandortModel not found in the OpenAPI spec\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

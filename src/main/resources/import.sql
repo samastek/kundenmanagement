@@ -1,11 +1,11 @@
----------------------------------------------------------------- DATEV BEGINN ------------------------------------------------------------------------
+---------------------------------------------------------------- unternehmen BEGINN ------------------------------------------------------------------------
 
 INSERT INTO GESCHAEFTSPARTNER (id, name)
-VALUES (nextval('geschaeftspartner_seq'), 'Datev');
+VALUES (nextval('geschaeftspartner_seq'), 'unternehmen');
 
------------------------ Datev hat zwei Standorte, an denen insgesamt 6 Mitarbeiter tätig sind -------------------------------------
+----------------------- unternehmen hat zwei Standorte, an denen insgesamt 6 Mitarbeiter tätig sind -------------------------------------
 
------------- Datev Stuttgart STANDORT (1) ------------
+------------ unternehmen Stuttgart STANDORT (1) ------------
 INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
 VALUES (nextval('anschrift_seq'), '10', 'Deutschland', 'Stuttgart', '70173', 'Königstraße', null);
 INSERT INTO STANDORT (id, name, anschrift_id, geschaeftspartner_id)
@@ -16,7 +16,7 @@ INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
 VALUES (nextval('anschrift_seq'), '90', 'Deutschland', 'Nürnberg', '90449', 'Herriedenerstr.', null);
 INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorname, anschrift_id)
 VALUES (nextval('mitarbeiter_seq'), 'sami.alzein@hotmail.com', '1997-09-01', 'Alzein', '01774737348', 'sami', currval('anschrift_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 
 -- MITARBEITER 2
@@ -26,7 +26,7 @@ INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorna
 VALUES (nextval('mitarbeiter_seq'), 'max.mustermann@gmail.com', '1990-01-01', 'Mustermann', '0176-12345678', 'Max', currval('anschrift_seq'));
 INSERT INTO GESCHAEFTSPARNTER_MITARBEITER (id, active, geschaeftspartner_id, mitarbeiter_id)
 VALUES (nextval('gm_seq'), true, currval('geschaeftspartner_seq'), currval('mitarbeiter_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 
 -- MITARBEITER 3
@@ -36,17 +36,17 @@ INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorna
 VALUES (nextval('mitarbeiter_seq'), 'sabine.mueller@yahoo.com', '1985-06-10', 'Müller', '0157-87654321', 'Sabine', currval('anschrift_seq'));
 INSERT INTO GESCHAEFTSPARNTER_MITARBEITER (id, active, geschaeftspartner_id, mitarbeiter_id)
 VALUES (nextval('gm_seq'), true, currval('geschaeftspartner_seq'), currval('mitarbeiter_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
------------- Datev Stuttgart STANDORT (1) ENDE ------------
+------------ unternehmen Stuttgart STANDORT (1) ENDE ------------
 
 
------------- Datev Standort München Beginn (2) ------------
+------------ unternehmen Standort München Beginn (2) ------------
 INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
 VALUES (nextval('anschrift_seq'), '20', 'Deutschland', 'München', '80331', 'Marienplatz', null);
 INSERT INTO STANDORT (id, name, anschrift_id, geschaeftspartner_id)
 VALUES (nextval('standort_seq'), 'Niederlassung München', currval('anschrift_seq'), currval('geschaeftspartner_seq'));
--- Standort Datev Standort München Ende
+-- Standort unternehmen Standort München Ende
 
 -- MITARBEITER 4
 INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
@@ -55,7 +55,7 @@ INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorna
 VALUES (nextval('mitarbeiter_seq'), 'hans.peter@web.de', '1995-02-28', 'Peter', '0174-98765432', 'Hans', currval('anschrift_seq'));
 INSERT INTO GESCHAEFTSPARNTER_MITARBEITER (id, active, geschaeftspartner_id, mitarbeiter_id)
 VALUES (nextval('gm_seq'), true, currval('geschaeftspartner_seq'), currval('mitarbeiter_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 
 -- MITARBEITER 5
@@ -65,7 +65,7 @@ INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorna
 VALUES (nextval('mitarbeiter_seq'), 'lena.meier@gmail.com', '1998-09-15', 'Meier', '0159-65432109', 'Lena', currval('anschrift_seq'));
 INSERT INTO GESCHAEFTSPARNTER_MITARBEITER (id, active, geschaeftspartner_id, mitarbeiter_id)
 VALUES (nextval('gm_seq'), true, currval('geschaeftspartner_seq'), currval('mitarbeiter_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 -- MITARBEITER 6
 INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
@@ -74,13 +74,13 @@ INSERT INTO MITARBEITER (id, email, geburtsdatum, nachname, telefonnummer, vorna
 VALUES (nextval('mitarbeiter_seq'), 'lena.meier@gmail.com', '1998-09-15', 'Meier', '0159-65432109', 'Lena', currval('anschrift_seq'));
 INSERT INTO GESCHAEFTSPARNTER_MITARBEITER (id, active, geschaeftspartner_id, mitarbeiter_id)
 VALUES (nextval('gm_seq'), true, currval('geschaeftspartner_seq'), currval('mitarbeiter_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 
------------- Datev Standort München ENDE (2) ------------
+------------ unternehmen Standort München ENDE (2) ------------
 
 
--------------------------------------------------------------------------------- DATEV Ende ----------------------------------------------------------
+-------------------------------------------------------------------------------- unternehmen Ende ----------------------------------------------------------
 
 
 -------------------------------------------------------------------------------- adorsys BEGINN ------------------------------------------------------
@@ -126,7 +126,7 @@ INSERT INTO ANSCHRIFT (id, hausnummer, land, ort, plz, strasse, zusatz)
 VALUES (nextval('anschrift_seq'), '8', 'Deutschland', 'Frankfurt', '60313', 'Mainzer Landstraße', null);
 INSERT INTO STANDORT (id, name, anschrift_id, geschaeftspartner_id)
 VALUES (nextval('standort_seq'), 'Niederlassung Frankfurt', currval('anschrift_seq'), currval('geschaeftspartner_seq'));
-INSERT INTO MITARBEITER_STANDORT (standortid, mitarbeiterid)
+INSERT INTO MITARBEITER_STANDORT (standort_id, mitarbeiter_id)
 VALUES (currval('standort_seq'), currval('mitarbeiter_seq'));
 ---------------------------------------------------------------- Amazon Ende -------------------------------------------------------------------------
 
