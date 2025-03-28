@@ -182,13 +182,3 @@ where s.name ='Niederlassung Stuttgart';
 ```
 
 
-
-<div align="center">
-  <h2>Ansprechpartner bei Fragen</h2>
-  <p>
-    Name: Sami Alzein<br>
-    Email: sami.alzein@hotmail.com<br>
-    Tel.: 01774737348
-  </p>
-</div>
-
